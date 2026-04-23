@@ -1,0 +1,193 @@
+/* Destination Card Styling */
+.destination-card {
+  position: relative;
+  display: block;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit !important;
+}
+
+.destination-card:hover {
+  box-shadow: 0 8px 32px rgba(78, 205, 196, 0.2);
+  border-color: rgba(78, 205, 196, 0.3);
+  transform: translateY(-8px);
+}
+
+.destination-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent,
+    rgba(0, 0, 0, 0.8)
+  );
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.destination-card:hover::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.9)
+  );
+}
+
+.destination-card__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  z-index: 2;
+}
+
+.destination-card__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+  font-family: "Playfair Display", serif;
+  transition: all 0.3s ease;
+}
+
+.destination-card:hover .destination-card__title {
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.destination-card__description {
+  color: #d1d5db;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.destination-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #22d3ee;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  width: fit-content;
+}
+
+.destination-card:hover .destination-card__link {
+  transform: translateX(8px);
+}
+
+/* Diary Card Styling */
+.diary-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit !important;
+  height: 100%;
+}
+
+.diary-card:hover {
+  box-shadow: 0 8px 32px rgba(78, 205, 196, 0.2);
+  border-color: rgba(78, 205, 196, 0.3);
+  transform: translateY(-8px);
+}
+
+.diary-card__category {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(78, 205, 196, 0.15);
+  color: #22d3ee;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  width: fit-content;
+  text-transform: capitalize;
+}
+
+.diary-card__title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 12px;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+}
+
+.diary-card__excerpt {
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.diary-card__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #9ca3af;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Destination Cards Grid */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1200px) {
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Diaries Grid */
+.diaries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1200px) {
+  .diaries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .diaries-grid {
+    grid-template-columns: 1fr;
+  }
+}
